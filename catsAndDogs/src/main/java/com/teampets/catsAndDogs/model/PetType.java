@@ -1,4 +1,4 @@
 package com.teampets.catsAndDogs.model;
 
-public class PetType {
+public class PetType extends BaseEntity {
 }
