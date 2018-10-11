@@ -28,7 +28,7 @@ public class Pet extends BaseEntity {
     @OneToMany(mappedBy = "") //TODO: add mapping
     private PetType petType;
     @Column(name = "localization")
-    private Localization localization;
+    private Geolocalization localization;
 
     //TODO: add mapping
     private Adoption adoption;
