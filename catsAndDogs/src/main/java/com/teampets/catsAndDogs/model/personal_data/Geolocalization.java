@@ -1,5 +1,7 @@
-package com.teampets.catsAndDogs.model;
+package com.teampets.catsAndDogs.model.personal_data;
 
+import com.teampets.catsAndDogs.model.BaseEntity;
+import com.teampets.catsAndDogs.model.pet.Pet;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

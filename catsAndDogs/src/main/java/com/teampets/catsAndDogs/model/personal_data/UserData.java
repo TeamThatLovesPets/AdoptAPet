@@ -1,5 +1,6 @@
-package com.teampets.catsAndDogs.model;
+package com.teampets.catsAndDogs.model.personal_data;
 
+import com.teampets.catsAndDogs.model.BaseEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,11 +14,13 @@ import javax.persistence.Table;
 @Getter
 @Builder
 @Entity
-@Table(name = "organization_data")
-public class OrganizationData extends BaseEntity {
+@Table(name = "user_data")
+public class UserData extends BaseEntity {
 
-    @Column(name = "organization_name")
-    private String organizationName;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
     @OneToOne(mappedBy = "") //TODO add mapping
     private LoginData loginData;
     @OneToOne(mappedBy = "") //TODO add mapping

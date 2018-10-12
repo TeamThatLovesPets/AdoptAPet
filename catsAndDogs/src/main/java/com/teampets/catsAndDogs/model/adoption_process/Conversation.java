@@ -1,6 +1,8 @@
-package com.teampets.catsAndDogs.model;
+package com.teampets.catsAndDogs.model.adoption_process;
 
 
+import com.teampets.catsAndDogs.model.BaseEntity;
+import com.teampets.catsAndDogs.model.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
