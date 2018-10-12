@@ -29,7 +29,9 @@ public class Pet extends BaseEntity {
     private LocalDate birthDate;
     @Column(name = "special_marks_description")
     private String specialMarksDescription;
-    @OneToMany(mappedBy = "") //TODO: add mapping
+
+    @JoinColumn(name = "pet_type")
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private PetType petType;
     @Column(name = "localization")
     private Geolocalization localization;
