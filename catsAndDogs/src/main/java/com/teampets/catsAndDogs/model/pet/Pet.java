@@ -29,7 +29,7 @@ public class Pet extends BaseEntity {
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private PetColour petColour;
 
-    // TODO: add pet
+    // TODO: add pet picture relation
 //    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
 //    private List<Picture> pictures;
 
