@@ -18,6 +18,9 @@ public class PetType extends BaseEntity {
     @Column(name = "type_name")
     private String typeName;
 
-    @OneToMany(mappedBy = "petType", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "petType", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private List<Pet> pets;
+
+    @OneToMany(mappedBy = "petType", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+    private List<PetColour> petColours;
 }

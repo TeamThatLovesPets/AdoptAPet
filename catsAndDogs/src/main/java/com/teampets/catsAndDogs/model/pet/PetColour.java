@@ -17,9 +17,11 @@ public class PetColour extends BaseEntity {
 
     @Column(name = "colour_label")
     private String colourLabel;
-    //TODO: add constrains/mapping
+
+    @JoinColumn(name = "pet_type")
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private PetType petType;
 
-    @OneToMany(mappedBy = "petColor", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "petColour", cascade = CascadeType.ALL)
     private List<Pet> pets;
 }

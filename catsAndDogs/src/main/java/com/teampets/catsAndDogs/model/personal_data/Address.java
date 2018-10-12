@@ -1,6 +1,7 @@
 package com.teampets.catsAndDogs.model.personal_data;
 
 import com.teampets.catsAndDogs.model.BaseEntity;
+import com.teampets.catsAndDogs.model.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,5 +27,5 @@ public class Address extends BaseEntity {
     private String apartmentNo;
 
     @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
-    private UserData userData;
+    private User userData;
 }

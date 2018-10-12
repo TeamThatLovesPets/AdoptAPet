@@ -1,24 +1,33 @@
 package com.teampets.catsAndDogs.model.user;
 
-import com.teampets.catsAndDogs.model.personal_data.OrganizationData;
-import com.teampets.catsAndDogs.model.personal_data.UserData;
-import lombok.Builder;
+import com.teampets.catsAndDogs.model.personal_data.Address;
+import com.teampets.catsAndDogs.model.personal_data.LoginData;
+import com.teampets.catsAndDogs.model.pet.Pet;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.List;
 
 @Setter
 @Getter
-@Builder
+//@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "organisation")
+@Table(name = "organization")
 public class Organization extends User {
 
-    @OneToOne(mappedBy = "") //TODO: add mapping
-    private UserData leaderData;
-    @OneToOne(mappedBy = "") //TODO: add mapping
-    private OrganizationData organizationData;
+    public Organization(String firstName, String lastName, List<Pet> pets, LoginData loginData, Address address, String organizationName) {
+        super(firstName, lastName, pets, loginData, address);
+        this.organizationName = organizationName;
+    }
+
+    @Column(name = "organization_name")
+    private String organizationName;
+
 }

@@ -1,6 +1,7 @@
 package com.teampets.catsAndDogs.model.personal_data;
 
 import com.teampets.catsAndDogs.model.BaseEntity;
+import com.teampets.catsAndDogs.model.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,5 +21,5 @@ public class LoginData extends BaseEntity {
     private String password;
 
     @OneToOne(mappedBy = "loginData", cascade = CascadeType.ALL)
-    private UserData userData;
+    private User userData;
 }
