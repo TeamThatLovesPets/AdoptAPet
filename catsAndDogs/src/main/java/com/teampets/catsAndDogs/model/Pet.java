@@ -1,8 +1,15 @@
 package com.teampets.catsAndDogs.model;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Setter
+@Getter
+@Builder
 @Entity
 @Table(name = "pet")
 public class Pet extends BaseEntity {
