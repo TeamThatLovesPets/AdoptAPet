@@ -2,7 +2,6 @@ package com.teampets.catsAndDogs.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "pet")
@@ -14,10 +13,14 @@ public class Pet extends BaseEntity {
     private Float weight;
     @Column(name = "height")
     private Float height;
-    @Column(name = "pet_colour")
+
+    @JoinColumn(name = "pet_colour")
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private PetColour petColour;
-    @OneToMany(mappedBy = "") //TODO: add mapping
-    private List<Picture> pictures;
+
+    // TODO: add pet
+//    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
+//    private List<Picture> pictures;
 
     @JoinColumn(name = "owner")
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})

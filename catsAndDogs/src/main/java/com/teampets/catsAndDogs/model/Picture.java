@@ -7,4 +7,5 @@ import javax.persistence.Table;
 @Table(name = "pictures")
 public class Picture extends BaseEntity {
     //TODO: add field with proper type
+
 }
