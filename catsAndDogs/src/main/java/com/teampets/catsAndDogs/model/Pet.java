@@ -19,7 +19,8 @@ public class Pet extends BaseEntity {
     @OneToMany(mappedBy = "") //TODO: add mapping
     private List<Picture> pictures;
 
-    //TODO: add mapping
+    @JoinColumn(name = "owner")
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private User owner;
     @Column(name = "birth_date")
     private LocalDate birthDate;
