@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
@@ -26,4 +24,7 @@ public class Address extends BaseEntity {
     private String houseNo;
     @Column(name = "apartment_number")
     private String apartmentNo;
+
+    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
+    private UserData userData;
 }

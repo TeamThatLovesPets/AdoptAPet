@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
@@ -20,4 +18,7 @@ public class LoginData extends BaseEntity {
     private String email;
     @Column(name = "password")
     private String password;
+
+    @OneToOne(mappedBy = "loginData", cascade = CascadeType.ALL)
+    private UserData userData;
 }
