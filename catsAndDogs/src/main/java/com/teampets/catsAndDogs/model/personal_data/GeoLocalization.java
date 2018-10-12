@@ -6,21 +6,20 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Setter
 @Getter
 @Builder
 @Entity
-@Table(name = "geolocalization")
-public class Geolocalization extends BaseEntity {
+@Table(name = "geo_localization")
+public class GeoLocalization extends BaseEntity {
 
     @Column(name = "longitude")
     private Double longitude;
     @Column(name = "latitude")
     private Double latitude;
-    //TODO: add mapping
+
+    @OneToOne(mappedBy = "localization", cascade = CascadeType.ALL)
     private Pet pet;
 }
