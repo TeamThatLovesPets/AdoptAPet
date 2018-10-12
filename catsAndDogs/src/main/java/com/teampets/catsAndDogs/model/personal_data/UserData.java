@@ -20,11 +20,11 @@ public class UserData extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "loginData")
+    @JoinColumn(name = "loginData")
     @OneToOne(cascade = CascadeType.ALL)
     private LoginData loginData;
 
-    @Column(name = "address")
+    @JoinColumn(name = "address")
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 }
