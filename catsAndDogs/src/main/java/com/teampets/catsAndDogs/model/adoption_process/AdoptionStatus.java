@@ -1,21 +1,21 @@
-package com.teampets.catsAndDogs.model.adoption_process;
-
-import com.teampets.catsAndDogs.model.BaseEntity;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Setter
-@Getter
-@Builder
-@Entity
-@Table(name = "adoption_status")
-public class AdoptionStatus extends BaseEntity {
-
-    @Column(name = "status_name")
-    private String adoptionStatusName;
-}
+//package com.teampets.catsAndDogs.model.adoption_process;
+//
+//import com.teampets.catsAndDogs.model.BaseEntity;
+//import lombok.Builder;
+//import lombok.Getter;
+//import lombok.Setter;
+//
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Table;
+//
+//@Setter
+//@Getter
+//@Builder
+//@Entity
+//@Table(name = "adoption_status")
+//public class AdoptionStatus extends BaseEntity {
+//
+//    @Column(name = "status_name")
+//    private String adoptionStatusName;
+//}
