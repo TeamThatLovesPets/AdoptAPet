@@ -2,7 +2,7 @@ package com.teampets.catsAndDogs.model.pet;
 
 import com.teampets.catsAndDogs.model.BaseEntity;
 import com.teampets.catsAndDogs.model.adoption_process.Adoption;
-import com.teampets.catsAndDogs.model.personal_data.Geolocalization;
+import com.teampets.catsAndDogs.model.personal_data.GeoLocalization;
 import com.teampets.catsAndDogs.model.user.User;
 import lombok.Builder;
 import lombok.Getter;
@@ -44,8 +44,10 @@ public class Pet extends BaseEntity {
     @JoinColumn(name = "pet_type")
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private PetType petType;
-    @Column(name = "localization")
-    private Geolocalization localization;
+
+    @JoinColumn(name = "localization")
+    @OneToOne(cascade = CascadeType.ALL)
+    private GeoLocalization localization;
 
     @OneToOne(mappedBy = "pet", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     private Adoption adoption;
