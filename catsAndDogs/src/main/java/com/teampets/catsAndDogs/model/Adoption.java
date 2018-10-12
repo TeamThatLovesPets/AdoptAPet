@@ -1,9 +1,6 @@
 package com.teampets.catsAndDogs.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -20,8 +17,10 @@ public class Adoption extends BaseEntity {
                             // mapping's for different subclass of User class
     @OneToOne(mappedBy = "") //TODO: add mapping
     private User finalAdopter;
-    @OneToOne(mappedBy = "") //TODO: add mapping
+
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private Pet pet;
+
     @Column(name = "adoption_date")
     private LocalDateTime adoptionDate;
 }

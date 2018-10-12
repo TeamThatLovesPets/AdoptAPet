@@ -36,7 +36,7 @@ public class Pet extends BaseEntity {
     @Column(name = "localization")
     private Geolocalization localization;
 
-    //TODO: add mapping
+    @OneToOne(mappedBy = "pet", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     private Adoption adoption;
 
 
