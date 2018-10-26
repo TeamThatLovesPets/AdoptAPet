@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -20,5 +21,12 @@ public class Picture extends BaseEntity {
 
     @Lob
     private byte[] pictures;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "upload_date")
+    private LocalDate uploadDate;
+
 
 }
