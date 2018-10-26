@@ -20,7 +20,8 @@ public class Picture extends BaseEntity {
     private Pet pet;
 
     @Lob
-    private byte[] pictures;
+    @Column(name = "data")
+    private byte[] data;
 
     @Column(name = "name")
     private String name;
