@@ -23,8 +23,8 @@ public class Adoption extends BaseEntity {
     @JoinColumn(name = "status")
     private AdoptionStatus adoptionStatus;
 
-//    TODO: add mapping
-//    private List<Conversation> conversations;
+    @OneToMany(mappedBy = "adoption", cascade = {CascadeType.REFRESH,CascadeType.DETACH, CascadeType.MERGE})
+    private List<Conversation> conversations;
 //    @OneToOne(mappedBy = "") //TODO: add mapping
 //    private User petKeeper; // TODO: we need solution to a problem of different
 //                            // mapping's for different subclass of User class
