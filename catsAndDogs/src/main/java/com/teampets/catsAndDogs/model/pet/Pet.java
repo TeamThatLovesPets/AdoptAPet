@@ -3,12 +3,14 @@ package com.teampets.catsAndDogs.model.pet;
 import com.teampets.catsAndDogs.model.BaseEntity;
 import com.teampets.catsAndDogs.model.personal_data.GeoLocalization;
 import com.teampets.catsAndDogs.model.user.User;
+import com.teampets.catsAndDogs.model.util.Picture;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 //import com.teampets.catsAndDogs.model.adoption_process.Adoption;
 
@@ -32,9 +34,8 @@ public class Pet extends BaseEntity {
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     private PetColour petColour;
 
-    // TODO: add pet picture relation
-//    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
-//    private List<Picture> pictures;
+    @OneToMany(mappedBy = "pet", cascade = CascadeType.ALL)
+    private List<Picture> pictures;
 
     @JoinColumn(name = "owner")
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})

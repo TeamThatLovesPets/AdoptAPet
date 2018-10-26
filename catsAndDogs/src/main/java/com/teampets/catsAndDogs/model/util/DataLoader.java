@@ -36,7 +36,6 @@ public class DataLoader {
         });
 
         return args -> {};
-
     }
 
     private Iterable<Picture> initPicture() throws IOException {
