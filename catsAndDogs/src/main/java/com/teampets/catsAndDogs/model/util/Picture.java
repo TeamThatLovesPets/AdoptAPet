@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Setter
@@ -15,5 +16,8 @@ import javax.persistence.Table;
 @Table(name = "pictures")
 public class Picture extends BaseEntity {
     //TODO: add field with proper type
+
+    @Lob
+    private Byte[] pictures;
 
 }
