@@ -18,6 +18,6 @@ public class Picture extends BaseEntity {
     //TODO: add field with proper type
 
     @Lob
-    private Byte[] pictures;
+    private byte[] pictures;
 
 }
