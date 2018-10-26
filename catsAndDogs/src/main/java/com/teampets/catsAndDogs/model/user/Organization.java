@@ -1,5 +1,6 @@
 package com.teampets.catsAndDogs.model.user;
 
+import com.teampets.catsAndDogs.model.adoption_process.Message;
 import com.teampets.catsAndDogs.model.personal_data.Address;
 import com.teampets.catsAndDogs.model.personal_data.LoginData;
 import com.teampets.catsAndDogs.model.pet.Pet;
@@ -22,8 +23,8 @@ import java.util.List;
 @Table(name = "organization")
 public class Organization extends User {
 
-    public Organization(String firstName, String lastName, List<Pet> pets, LoginData loginData, Address address, String organizationName) {
-        super(firstName, lastName, pets, loginData, address);
+    public Organization(String firstName, String lastName, List<Pet> pets, LoginData loginData, Address address, String organizationName, List<Message> messages) {
+        super(firstName, lastName, pets, loginData, address, messages);
         this.organizationName = organizationName;
     }
 

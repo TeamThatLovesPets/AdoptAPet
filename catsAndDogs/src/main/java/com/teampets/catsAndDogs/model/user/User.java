@@ -1,6 +1,7 @@
 package com.teampets.catsAndDogs.model.user;
 
 import com.teampets.catsAndDogs.model.BaseEntity;
+import com.teampets.catsAndDogs.model.adoption_process.Message;
 import com.teampets.catsAndDogs.model.personal_data.Address;
 import com.teampets.catsAndDogs.model.personal_data.LoginData;
 import com.teampets.catsAndDogs.model.pet.Pet;
@@ -36,4 +37,8 @@ public class User extends BaseEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
+    @OneToMany(mappedBy= "user", cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.DETACH})
+    private List<Message> messages;
+
 }

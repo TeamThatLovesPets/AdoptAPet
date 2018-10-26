@@ -17,13 +17,14 @@ import java.util.List;
 @Table(name = "conversation")
 public class Conversation extends BaseEntity {
 
-//    @OneToMany(mappedBy = "") //TODO: add mapping
-////    private List<Message> messages;
+    @OneToMany(mappedBy = "conversation", cascade = {CascadeType.REFRESH, CascadeType.MERGE, CascadeType.DETACH})
+    private List<Message> messages;
 //    @OneToOne(mappedBy = "") //TODO: add mapping
 //    private User petKeeper;
 //    @OneToOne(mappedBy = "") //TODO: add mapping
 //    private User potentialAdopter;
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH, CascadeType.MERGE})
+
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH, CascadeType.MERGE})
     @JoinColumn(name = "adoption")
     private Adoption adoption;
 }
