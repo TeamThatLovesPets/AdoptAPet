@@ -1,5 +1,6 @@
 package com.teampets.catsAndDogs.model.util;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import com.teampets.catsAndDogs.repository.PictureReposiory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -32,17 +33,18 @@ public class DataLoader {
         }
 
         pictures.forEach(picture -> {
-            log.info("Preloaded picture: " + picture.getPictures());
+            log.info("Preloaded picture: " + picture.getData());
         });
 
         return args -> {};
     }
 
     private Iterable<Picture> initPicture() throws IOException {
+        //TODO: path method
         File file = new File("src/main/resources/image/cat.jpg");
         byte[] fileContent = Files.readAllBytes(file.toPath());
         Picture pictureNew = pictureReposiory.save(
-                Picture.builder().pictures(fileContent).build());
+                Picture.builder().data(fileContent).build());
 
         return Arrays.asList(pictureNew);
     }
